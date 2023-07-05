@@ -12,7 +12,7 @@ from utils.timer import Timer
 
 labels = dict()
 labels[0] = 'face'
-img_dim = 840
+img_dim = 640
 
 
 def check_keys(model, pretrained_state_dict):
