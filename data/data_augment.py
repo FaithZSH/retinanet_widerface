@@ -450,7 +450,7 @@ class preproc(object):
         self.rln = RandomLightingNoise()
         self.rb = RandomBrightness()
         self.rb_crop = RandomBaiduCrop(size=300)
-        self.r_crop = RandomCrop(image_size=300)
+        self.r_crop = RandomCrop()
 
     def __call__(self, image, targets):
         assert targets.shape[0] > 0, "this image does not have gt"
