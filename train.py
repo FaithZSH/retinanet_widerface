@@ -48,11 +48,11 @@ def main(args=None):
             raise ValueError('Must provide --coco_path when training on COCO,')
 
         dataset_train = CocoDataset(parser.coco_path, set_name='train2017', num_classes=num_classes,
-                                    transform=transforms.Compose([Resizer()])
+                                    transform=transforms.Compose([Normalizer(), Augmenter(), Resizer()])
                                     , preproc=preproc(img_dim, rgb_mean)
                                     )
         dataset_val = CocoDataset(parser.coco_path, set_name='val2017', num_classes=num_classes,
-                                  transform=transforms.Compose([NoResizer()])
+                                  transform=transforms.Compose([Normalizer(), NoResizer()])
                                   )
         # print(dataset_train.image_ids)
 
